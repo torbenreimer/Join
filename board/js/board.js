@@ -41,7 +41,7 @@ function renderArrays() {
 function checkSubtask() {
   for (let j = 0; j < currentTask["subTask"].length; j++) {
     let calcWidth =
-      currentTask["subTaskFinish"] / currentTask["subTask"].length * 100;
+      (currentTask["subTaskFinish"] / currentTask["subTask"].length) * 100;
     document.getElementById(`subtaskContainer${currentTask["id"]}`).innerHTML =
       subtaskHtml(calcWidth);
   }
@@ -81,12 +81,13 @@ function assignToBigger3() {
   }
   document.getElementById(
     `contactContainer${currentTask["id"]}`
-  ).innerHTML += `<p class="contact" style="background-color: #2A3647">+${currentTask["contact"].length - 2
+  ).innerHTML += `<p class="contact" style="background-color: #2A3647">+${
+    currentTask["contact"].length - 2
   }</p>`;
 }
 
 /**
- * finds in the contact array, 
+ * finds in the contact array,
  * @param {j} j is the current user
  */
 function getContactColor(j) {
@@ -117,11 +118,21 @@ function openCard(id) {
   currentTask = tasks.find((t) => t.id == id);
   document.getElementById("openTaskCard").innerHTML = openCardHtml();
   getSubtaskForOpenedCard(id);
-  for (let i = 0; i < currentTask["contact"].length; i++) {
-    getCharAtNull(i);
-    getContactColor(i);
-    document.getElementById(`assingToCard${id}`).innerHTML +=
-      openCardAssingToHtml(i);
+  getContactsForOpenedCard(id);
+}
+
+function getContactsForOpenedCard(id) {
+  if (currentTask["contact"].length == 0) {
+    document.getElementById(
+      `assingToCard${id}`
+    ).innerHTML = `No Contacts assigned to yet`;
+  } else {
+    for (let i = 0; i < currentTask["contact"].length; i++) {
+      getCharAtNull(i);
+      getContactColor(i);
+      document.getElementById(`assingToCard${id}`).innerHTML +=
+        openCardAssingToHtml(i);
+    }
   }
 }
 
@@ -133,12 +144,13 @@ function closeCard() {
 }
 
 /**
- * 
+ *
  * @param {id} id currentTask id
  */
 function getSubtaskForOpenedCard(id) {
   if (currentTask["subTask"].length == 0) {
-    document.getElementById(`openedSubtaskContainer${id}`).innerHTML = "";
+    document.getElementById(`openedSubtaskContainer${id}`).innerHTML =
+      "No Subtasks";
   } else {
     for (let j = 0; j < currentTask["subTask"].length; j++) {
       let currentTaskId = currentTask["id"] + j;
@@ -165,7 +177,7 @@ function getSubtaskChecked(currentTaskId, j) {
     document.getElementById(currentTaskId).innerHTML = subtaskAddHtml(
       currentTaskId,
       j
-    ); 
+    );
   }
 }
 
@@ -177,7 +189,7 @@ async function deleteTask(id) {
   closeCard();
 }
 
-async function addSubtaskToFinish(id, j) {
+async function addSubtaskToFinish(id) {
   let subTaskFinish = currentTask["subTaskFinish"] + 1;
   currentTask["subTaskFinish"] = subTaskFinish;
   await backend.setItem("tasks", JSON.stringify(tasks));
@@ -187,7 +199,7 @@ async function addSubtaskToFinish(id, j) {
   closeCard();
 }
 
-async function addSubtaskToDelete(id, j) {
+async function addSubtaskToDelete(id) {
   let subTaskFinish = currentTask["subTaskFinish"] - 1;
   currentTask["subTaskFinish"] = subTaskFinish;
   await backend.setItem("tasks", JSON.stringify(tasks));
