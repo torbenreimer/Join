@@ -54,10 +54,10 @@ function addingPrio(prio) {
 function checkPrio(newprio) {
   for (let i = 0; i < prios.length; i++) {
     let prio = prios[i];
-    if (prio != newprio || currentPrio == newprio) {
-      takePrio(prio);
-    } else {
+    if (prio == newprio) {
       getPrio(prio);
+    } else {
+      takePrio(prio);
     }
   }
   currentPrio = newprio;

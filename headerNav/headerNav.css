@@ -29,11 +29,11 @@ header {
     justify-content: center;
     align-items: center;
     width: 130px;
-    background: #f00020;
+    background: white;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
     border-radius: 20px 0px 20px 20px;
     z-index: 52;
-    color: white;
+    color: black;
 }
 
 .logoutButton {
@@ -47,16 +47,19 @@ header {
 
 .logoutHoverButton:hover {
     background: #f00021;
+    color: white;
     border-radius: 0px 0px 20px 20px;
 }
 
 .helpButton:hover {
     border-radius: 20px 0px 0px 0px;
-    background: #0d1f36;
+    background: #f00021;
+    color: white;
 }
 
 .legalButton:hover {
-    background: #0d1f36;
+    background: #f00021;
+    color: white;
 }
 
 .logoutButton span {
@@ -81,7 +84,6 @@ header {
     flex-direction: row;
     align-items: center;
     gap: 26px;
-    flex: none;
     margin-right: 33px;
 }
 
@@ -158,7 +160,7 @@ nav {
 }
 
 .navbar-fields a:hover {
-    background: #091931;
+    background: rgb(9, 25, 49);
     color: black;
 }
 
@@ -178,7 +180,7 @@ nav {
 }
 
 .legalNoticeContainerNav:hover {
-    background: #091931;
+    background: rgb(9, 25, 49);
 }
 
 .legalNoticeContainerNav img {
