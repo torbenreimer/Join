@@ -81,15 +81,15 @@ function changeProfileImage() {
  */
 function changeFocusNav() {
   if (window.location.href.includes("contacts.html")) {
-    document.getElementById("contactsNav").style.background = "#091931";
+    document.getElementById("contactsNav").style.background = "#FFFFFF";
   } else if (window.location.href.includes("summary.html")) {
-    document.getElementById("summaryNav").style.background = "#091931";
+    document.getElementById("summaryNav").style.background = "#FFFFFF";
   } else if (window.location.href.includes("legal.html")) {
-    document.getElementById("legalNav").style.background = "#091931";
+    document.getElementById("legalNav").style.background = "#FFFFFF";
   } else if (window.location.href.includes("add_task.html")) {
-    document.getElementById("addTaskNav").style.background = "#091931";
+    document.getElementById("addTaskNav").style.background = "#FFFFFF";
   } else if (window.location.href.includes("board.html")) {
-    document.getElementById("boardNav").style.background = "#091931";
+    document.getElementById("boardNav").style.background = "#FFFFFF";
   }
 }
 

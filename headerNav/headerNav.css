@@ -126,19 +126,14 @@ nav {
 
 .navbar-fields a {
     text-decoration: none;
-    color: white;
 }
 
 .navbarRows {
     display: flex;
-    flex-direction: row;
     align-items: center;
     gap: 20px;
     width: 232px;
     height: 46px;
-    flex: none;
-    order: 4;
-    flex-grow: 0;
 }
 
 .navbarRows img {
@@ -150,18 +145,18 @@ nav {
 .navbarRows span {
     width: auto;
     height: 19px;
-    font-weight: 400;
     font-size: 16px;
     line-height: 120%;
-    color: #CDCDCD;
-    flex: none;
-    order: 1;
-    flex-grow: 0;
+    color: black;
+}
+
+.navbarRows:hover {
+    color: white;
 }
 
 .navbar-fields a:hover {
-    background: rgb(9, 25, 49);
-    color: black;
+    background: white;
+    color: white;
 }
 
 .legalNoticeContainerNav {
@@ -174,13 +169,14 @@ nav {
     gap: 10px;
     width: 232px;
     height: 46px;
-    color: white;
+    color: black;
     padding-left: auto;
     padding-right: auto;
 }
 
 .legalNoticeContainerNav:hover {
-    background: rgb(9, 25, 49);
+    background: #FFFFFF;
+    color: black;
 }
 
 .legalNoticeContainerNav img {
@@ -209,7 +205,7 @@ nav {
         left: 0px;
         top: calc(100vh - 80px);
         padding: 0;
-        background: #2A3647;
+        background: #f00020;
         box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
         border-radius: 0px;
     }
