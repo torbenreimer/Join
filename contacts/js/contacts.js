@@ -187,22 +187,6 @@ async function deleteContact(j) {
 }
 
 /**
- * changes user to the guest user
- */
-function changeUserToGuestUser() {
-    user = {
-        firstName: 'Ghost',
-        surname: 'Guest',
-        mail: 'test@test.test',
-        background: 'rgb(133,150,22)',
-        phone: 0,
-        password: 'test'
-    };
-    let userAsText = JSON.stringify(user);
-    localStorage.setItem("user", userAsText);
-}
-
-/**
  * checks if the contact is included in a task
  * @param {j} j is the current contact 
  */

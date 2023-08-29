@@ -20,8 +20,7 @@ function renderContactsTemplate(j) {
 function showContactDetailsTemplate(j) {
     return /*html*/`
     <div class="contactsHeadlineContainer">
-    <span class="kanbanResponsive">Kanban Project Managment Tool</span>
-        <span class="contactsHeadline">Contacts</span>
+        <span class="contactsHeadline">Your Team</span>
         <div class="contactsTextBreakLine"></div>
         <span class="contactsBetterWithATeam">Better with a team</span>
         <div onclick="closeContactDetails()"class="arrowLeft"><img src="../assets/img/arrow_left.png"></div>
@@ -95,7 +94,7 @@ function showContactDetailsTemplate(j) {
 function headlineTemplate() {
     return /*html*/`
     <div class="contactsHeadlineContainer">
-     <span class="contactsHeadline">Contacts</span>
+     <span class="contactsHeadline">Your Team</span>
      <div class="contactsTextBreakLine"></div>
      <span class="contactsBetterWithATeam">Better with a team</span>
     </div>`
